@@ -32,3 +32,11 @@ map <F8> :NERDTree<CR>
 " 把 CTRL-S 映射为 保存,因为这个操作做得太习惯了  
 imap <C-S> <C-C>:w<CR>  
 colorscheme railscasts
+function Maximize_Window()
+	silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+endfunction
+filetype plugin on
+" 修改swapfile路径
+set dir=~/.vim/backup/
+let g:rsenseHome = "/usr/lib/rsense-0.3"
+let g:rsenseUseOmniFunc = 1
